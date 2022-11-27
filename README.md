@@ -8,3 +8,6 @@ The project is created usign the following frameworks:
 * React
 * Chakra UI
 * Vite
+  
+## Attributions
+Favicon: [Ux-design icons created by juicy_fish - Flaticon](https://www.flaticon.com/free-icons/ux-design)
