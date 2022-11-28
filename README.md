@@ -11,4 +11,3 @@ The project is created usign the following frameworks:
   
 ## Attributions
 Favicon: [Ux-design icons created by juicy_fish - Flaticon](https://www.flaticon.com/free-icons/ux-design)
-Burger Menu Icon: [Burger icons created by Andy Horvath - Flaticon](https://www.flaticon.com/free-icons/burger)
