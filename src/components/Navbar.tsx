@@ -19,7 +19,7 @@ function Navbar() {
     const burgerButtonRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <Box w="100%" bg="blue.100" padding="1rem">
+    <Box w="100%" bg="blue.100" padding="1rem" position="fixed" zIndex="1">
         <HStack justifyContent="space-between" gap="5rem">
             <Logo size={2}/>
             <Show above="md">
@@ -41,7 +41,7 @@ function Navbar() {
                         <DrawerHeader><Logo size={2}/></DrawerHeader>
                         <DrawerBody>
                             <VStack gap="1rem" marginTop="2rem">
-                                {pages.map(p => <Link key={p.url} color="gray.600" fontWeight="semibold" as={RouteLink} to={p.url}>{p.display}</Link>)}
+                                {pages.map(p => <Link key={p.url} color="gray.600" fontWeight="semibold" as={RouteLink} to={p.url} onClick={onClose}>{p.display}</Link>)}
                             </VStack>
                         </DrawerBody>
                     </DrawerContent>
