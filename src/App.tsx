@@ -1,13 +1,23 @@
-import {VStack} from '@chakra-ui/react'
-import Navbar from './components/Navbar'
-import {BrowserRouter as Router} from 'react-router-dom'
+import {Flex, Box} from '@chakra-ui/react';
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import HomePage from './pages/Home/HomePage'
+import NotFoundPage from './pages/404/NotFoundPage'
+import ChallengesPage from './pages/Challenges/ChallengesPage'
 
 function App() {
   return (
     <Router>
-      <VStack>
+      <Flex direction="column" height="100vh">
         <Navbar />
-      </VStack>
+        <Box flexGrow="1" width="100%">
+          <Routes>
+            <Route path="/challenges/*" element={<ChallengesPage />}/>
+            <Route index element={<HomePage />}/>
+            <Route path="*" element={<NotFoundPage />}/>
+          </Routes>
+        </Box>
+      </Flex>
     </Router>
   )
 }
