@@ -6,7 +6,7 @@ import {challenges} from './ChallengesPage'
 
 const ChallengeOverviewPage = () => {
   return (
-    <VStack padding="1rem">
+    <VStack padding="1rem" spacing="4rem">
         {Object.keys(challenges).map(group => <VStack key={group} alignItems="flex-start" spacing="1rem" width="100%">
             <Heading as="h3" color="blue.700">{group}</Heading>
             <Divider />

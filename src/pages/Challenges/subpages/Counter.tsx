@@ -7,7 +7,7 @@ const Counter = () => {
     const [count, setCount] = useState(0);
     const [stepSize, setStepSize] = useState(1);
 
-    const stepRef = useRef<HTMLInputElement>();
+    const stepRef = useRef<HTMLInputElement>(null);
     
     const onStepSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         let val = stepSize;
@@ -37,7 +37,7 @@ const Counter = () => {
                         <GridItem area="cntDisplay">
                             <HStack spacing="0">
                                 <IconButton variant="solid" colorScheme="teal" aria-label="Subtract" icon={<MinusIcon />} borderRightRadius="0" onClick={() => setCount(count - stepSize)}/>
-                                <Input bg="white" borderRadius="0" width="8rem" isReadOnly value={count}/>
+                                <Input bg="gray.50" borderRadius="0" width="8rem" isReadOnly value={count}/>
                                 <IconButton variant="solid" colorScheme="teal" aria-label="Add" icon={<AddIcon />} borderLeftRadius="0" onClick={() => setCount(count + stepSize)}/>
                             </HStack>
                         </GridItem>
