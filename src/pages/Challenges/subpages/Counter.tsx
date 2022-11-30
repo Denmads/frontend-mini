@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react'
 import {Center, Card, CardBody, CardHeader, Heading, HStack, IconButton, Input, Grid, GridItem, InputGroup, InputLeftAddon} from '@chakra-ui/react'
 import {AddIcon, MinusIcon, RepeatIcon} from '@chakra-ui/icons'
+import {intInput} from '../../../utilfuncs'
 
 const Counter = () => {
 
@@ -10,19 +11,9 @@ const Counter = () => {
     const stepRef = useRef<HTMLInputElement>(null);
     
     const onStepSizeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        let val = stepSize;
-        try {
-            val = Math.abs(parseInt(event.target.value));
-            if(!isNaN(val)) {
-                setStepSize(val);
-            }
-            else {
-                val = stepSize;
-            }
-        }
-        catch (err) {
-        }
-        stepRef.current!.value = val + "";
+        let val = intInput(event.target.value);
+        if (val === undefined) stepRef.current!.value = stepSize + "";
+        else setStepSize(val);
     }
 
     return (
